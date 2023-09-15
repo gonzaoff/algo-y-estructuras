@@ -11,6 +11,7 @@ def ventasAH():
     regCABA=0
     regNorOes = 0
     regNoreste = 0 
+
     regNor=0
     regCentro=0
     regSur=0
@@ -21,6 +22,7 @@ def ventasAH():
     totalVentCABA=0
     totalVentNorOes=0
     totalVentNoreste=0
+
     totalVentCentro = 0
     totalVentNor = 0
     totalVentSur = 0
@@ -31,6 +33,7 @@ def ventasAH():
     cantVenCABA=0
     cantVenNorOes=0
     cantVenNoreste=0
+
     cantVentCentro = 0
     cantVentNor = 0
     cantVentSur = 0
@@ -38,6 +41,7 @@ def ventasAH():
     promNor=0
     promCen=0
     promSur=0
+
     promLit=0
     promCentro=0
     promBS=0
@@ -64,7 +68,8 @@ def ventasAH():
         selector=int(input("""Ingrese la opcion adecuada:
                         1) Ventas por sucursal
                         2) Reg de ventas mensuales.
-                        3) Promedio de ventas""")) 
+                        3) Promedio de ventas
+                        """)) 
         
         while selector == 1:
 
@@ -92,7 +97,7 @@ def ventasAH():
                         regCen = float(input("Ingrese el monto de venta (precione 0 para ver los promedios): "))
 
                     promCen=totalVentCen/CanTotalVenCen
-                    print(promNorOes)
+                    print(promCen)
 
             while region == 'región de provincia de buenos aires' or region != "salir":
 
@@ -142,12 +147,15 @@ def ventasAH():
                     promNorOes=totalVentNorOes/CanTotalVenNorOes
                     print(promNorOes)
                     
+            totalVentNor=totalVentLit+totalVentNorOes+totalVentNoreste
+            # totalVentSur=
 
 
             selector=int(input("""Ingrese la opcion adecuada:
-1) Ventas por sucursal
-2) Reg de ventas mensuales.
-2) Promedio de ventas""")) 
+            1) Ventas por sucursal
+            2) Reg de ventas mensuales.
+            2) Promedio de ventas
+            """)) 
 
         #3) output: promedio de ventas de cada region (3) y promedio total.        
         if selector == 2 :
@@ -156,7 +164,8 @@ def ventasAH():
             promCentro=totalVentCentro/cantVentCentro
             promNor=totalVentSur/cantVentSur
 
-            promE=promSur+promNor+promCentro
+            promE=[]
+            promE.append(promSur+promNor+promCentro)
 
             #promE va a agregar sus valores a una lista
 
@@ -169,15 +178,15 @@ def ventasAH():
             print(f"***************")
             print(f"PROMEDIOS Mensuales (Todo el país)")
             print(f"***************")
-            print(f"1: $ {promE}")
-            print(f"2: $ {promE}.")
+            print(f"1: $ {promE[0]}")
+            print(f"2: $ {promE[1]}.")
 
             selector=int(input("""Ingrese la opcion adecuada:
         1) Ventas por sucursal
         2) Reg de ventas mensuales.
         2) Promedio de ventas"""))
 
-        if selector == 3:
+        # if selector == 3:
               
 
 
@@ -187,5 +196,5 @@ def ventasAH():
 
 ventasAH()
 
-
+##No se pudo terminar porque el archivo se eliminó.
 
