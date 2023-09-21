@@ -10,34 +10,33 @@ def regMultas():
     totalFirmas=0
     multa=""
 
+    totalMultas=0
     promedioMultas=0
-    totalPMulta=0
     cantMultas=0
 
     valorAV=0
     cantAV=0
-    totalAV=0
     sumaTotalAV=0
     promedioAV=0
 
-    valorSR=0
-    cantSR=0
-    totalSR=0
-    promedioSR=0
+    valorSE=0
+    cantSE=0
+    sumaTotalSE=0
+    promedioSE=0
 
     valorME=0
     cantME=0
-    totalME=0
+    sumaTotalME=0
     promedioME=0
 
     valorAP=0
     cantAP=0
-    totalAP=0
+    sumaTotalAP=0
     promedioAP=0
 
     DNI=0
 
-    cantMultas=input("Digite la cantidad de multas a registrar: ")
+    cantMultas=int(input("Digite la cantidad de multas a registrar: "))
     if cantMultas != 0:
 
         DNI=int(input("Ingrese el DNI del infractor: "))
@@ -46,8 +45,9 @@ def regMultas():
             tipoMul=int(input("""Seleccione el tipo de multa:
 1) Alta Velocidad.
 2) Mal Estacionado.
-3) Alcolemia Positiva.
-4) Semaforo en Rojo. """))
+3) Semaforo en Rojo.
+4) Alcoholemia Positiva. 
+"""))
 
 
             if tipoMul==1:
@@ -64,18 +64,18 @@ def regMultas():
             elif tipoMul == 2:
 
                 cantME=cantME+1
-                multa="Alta Velocidad"
+                multa="Mal Estacionado"
                 valorME=int(input(f"Ingrese el valor de {multa}: "))
 
                 sumaTotalME=valorME*cantME
-                promedioME=sumatotalME/cantME
+                promedioME=sumaTotalME/cantME
 
                 print("La multa fue agregada con exito.")
 
             elif tipoMul == 3:
 
                 cantSE=cantSE+1
-                multa="Alta Velocidad"
+                multa="Semaforo en Rojo"
                 valorSE=int(input(f"Ingrese el valor de {multa}: "))
 
                 sumaTotalSE=valorSE*cantSE
@@ -86,7 +86,7 @@ def regMultas():
             elif tipoMul == 4:
 
                 cantAP=cantAP+1
-                multa="Alta Velocidad"
+                multa="Alcolemia Positiva"
                 valorAV=int(input(f"Ingrese el valor de {multa}: "))
 
                 sumaTotalAP=valorAP*cantAP
@@ -94,11 +94,34 @@ def regMultas():
 
                 print("La multa fue agregada con exito.")
 
+            totalMultas=sumaTotalAP+sumaTotalAV+sumaTotalME+sumaTotalSE
+
         firma=input("¿El infractor firmo las multas?")
         if firma == "si":
             totalFirmas += 1
 
-        promedioMultas=(sumaTotalAP+sumaTotalAV+sumaTotalME+sumaTotalSE)/cantMultas
+        promedioMultas=totalMultas/cantMultas
+
+#output: mostrar en pantalla: cantidad total de multas por tipo, monto total y promedio por tipo, cantidad de infractores que firmaron
+        print(f"""------------------------------------------
+Multas por Alta Velocidad: {cantAV}
+Multas por Alcolemia Positiva: {cantAP}
+Multas por Mal Estacionado: {cantME}
+Multas por Semaforo en Rojo: {cantSE}
+
+Total por Alta velocidad: {sumaTotalAV}         
+Total por Alcolemia Positiva: {sumaTotalAP}         
+Total por Mal Estacionado: {sumaTotalME}         
+Total por Semaforo en Rojo: {sumaTotalSE}         
+
+Promedio por Alta Velocidad: {promedioAV}         
+Promedio por Alcolemia Positiva: {promedioAP}         
+Promedio por Mal Estacionado: {promedioME}         
+Promedio por Semaforo en  rojo: {promedioSE}
+
+Total de infracciones: {totalMultas}
+Precio promedio de infracciones: {promedioMultas}
+cantidad de infractores que firmaron: {totalFirmas}
+""")            
         
-            
-            
+regMultas()
