@@ -20,26 +20,20 @@ def regMultas():
     sumaTotalAV=0
     promedioAV=0
     
-    firmaAV=""
-    
-    
     valorSR=0
     cantSR=0
     totalSR=0
     promedioSR=0
-    firmaSR=""
 
     valorME=0
     cantME=0
     totalME=0
     promedioME=0
-    firmaME=""
     
     valorAP=0
     cantAP=0
     totalAP=0
     promedioAP=0
-    firmaAP=""
 
     DNI=0
 
@@ -106,7 +100,7 @@ def regMultas():
             totalFirmas=totalFirmas+1
 
         promedioMultas=(sumaTotalAP+sumaTotalAV+sumaTotalME+sumaTotalSE)/cantMultas
-        
+
         
             
             
