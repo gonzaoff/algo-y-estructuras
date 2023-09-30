@@ -49,14 +49,14 @@ def Resolvente(A,B,C):
         d1 = d1*(-1)
         x1 = -B+isqrt(d1)/(2*A)
         x2 = -B-isqrt(d2)/(2*A)
-        print(f"el valor de la raiz x1: -1*{x1}\nel valor de la raiz x2: {x2}")
+        print(f"el valor de la raiz x1: -1*{x1}\n")
         print("el valor de la raiz x1 pertenece a los numeros complejos.")
 
     elif d2<0:
         d2 = d2*(-1)
         x1 = -B+isqrt(d1)/(2*A)
         x2 = -B-isqrt(d2)/(2*A)
-        print(f"el valor de la raiz x1: {x1}\nel valor de la raiz x2: -1*{x2}")
+        print(f"el valor de la raiz x2: -1*{x2}")
         print("el valor de la raiz x1 pertenece a los numeros complejos.")
 
     elif d1>0 and d2>0:
