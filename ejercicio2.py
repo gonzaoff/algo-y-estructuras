@@ -1,22 +1,40 @@
-def supermerk2():
+def promAlt():
+    cantEst=int(input("Cuantos estudiantes son: "))
+    estudiantes = [float() for i in range(cantEst)]
+
+    for altura in range(cantEst):
+        datos=float(input("Ingrese la altura de los estudiantes: "))
+        estudiantes[altura]=datos
+
+    for altura in range(cantEst):
+        sumaAltura=float()
+        sumaAltura += estudiantes[altura]
+        promedioAltura = sumaAltura / cantEst
+    print(f"El promedio de altura es: {promedioAltura}")
     
     
-    mon1=int(input("ingrese la cantidad de monedas de 1 peso: "))
-    mon5=int(input("ingrese la cantidad de monedas de 5 pesos: "))
-    mon10=int(input("ingrese la cantidad de monedas de 10 peso: "))
-    bil20=int(input("ingrese la cantidad de billetes de 20 Pesos: "))
-    bil50=int(input("ingrese la cantidad de billetes de 50 Pesos: "))
-    bil100=int(input("ingrese la cantidad de billetes de 100 Pesos: "))
-    bil200=int(input("ingrese la cantidad de billetes de 200 Pesos: "))
-    bil500=int(input("ingrese la cantidad de billetes de 500 Pesos: "))
-    bil1000=int(input("ingrese la cantidad de billetes de 1000 Pesos: "))
-    bil2000=int(input("ingrese la cantidad de billetes de 2000 Pesos: "))
-    
-    sumador=(1*mon1)+(5*mon5)+(10*mon10)+(20*bil20)+(50*bil50)+(100*bil100)+(200*bil200)+(1000*bil1000)+(2000*bil2000)
-    
-    print(f"La cantidad total de dinero es: $ {sumador}")
     
     
-supermerk2()
+    
+    
+    
+    
+def promAlt2():
+    cant_est = int(input("Cuántos estudiantes son: "))
+
+    alturas = [float() for i in range(cant_est)]
+    for i in range(cant_est):
+        altura = float(input(f"Ingrese la altura del estudiante {i+1}: "))
+        alturas[i] = altura
+
+    suma_alturas = 0.0 
+    for i in range(cant_est):
+        suma_alturas += alturas[i]
+
+    promedio_altura = suma_alturas / cant_est
+
+    print(f"El promedio de altura es: {promedio_altura}")
+
+promAlt2()
     
 #Escobar Gonzalo
