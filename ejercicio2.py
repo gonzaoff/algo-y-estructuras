@@ -131,4 +131,33 @@ Promedio general de la clase: {promedioNotas}
 Mejor alumno: {mejorAlumno} con {notaMayor}
 -------------------------------\n""")
     
-Notas()
+# Notas()
+
+def productosEmpresas():
+    
+    tamaño=10
+    
+    vectorA=[int() for i in range(10)]
+    vectorB=[int() for i in range(10)]
+    vectorC=[int() for i in range(10)]
+    
+    for i in range(tamaño):
+        vectorA=int(input("Ingrese valor de las existencias: "))
+        vectorB=int(input("Ingrese valor de los pedidos: "))
+        
+    for i in range(tamaño):
+        if vectorA[i] == vectorB[i]:
+            vectorC[i] = vectorA[i]
+    
+        elif vectorB[i] > vectorA[i]:
+            diferencia = vectorB[i] - vectorA[i]
+            vectorC[i] = 2 * diferencia
+            
+        else:
+            vectorC[i] = vectorB[i]
+            
+    print("Vector C: ")
+    for valor in vectorC:
+        print(valor)
+
+productosEmpresas()
