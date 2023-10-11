@@ -64,5 +64,46 @@ def Resolvente(A,B,C):
         x2 = -B-isqrt(d2)/(2*A)
         print(f"el valor de la raiz x1: {x1}\nel valor de la raiz x2: {x2}")
 
-Resolvente(-22,7,-3)
+# Resolvente(-22,7,-3)
 
+def temper():
+    
+    temp=0
+    suma=0
+    bajoProm=0
+    mayorTemp=0
+    promedioTemp=0
+    
+    
+    cantDias=int(input("ingrese los dias: "))
+    temperaturas = [str() for i in range(cantDias)]
+    
+    #Ingreso los valores de temperatura en la array.
+    for i in range(cantDias):
+        temperatura = int(input("\nIngrese las temperaturas en grados centigrados: "))
+        temperaturas[temp] = temperatura
+        temp += 1
+    if temperatura > mayorTemp:
+        mayorTemp = temperatura
+        iDia = i
+        print(f"La mayor temperatura fue {mayorTemp} el dia {iDia}")
+        
+    if promedioTemp > bajoProm:
+        bajoProm += 1
+    print(f"Hubieron {bajoProm} dias bajo el promeedio")    
+
+    
+    #Sumo las temperaturas y promedio.
+    for j in range(cantDias):
+        suma += float(temperaturas[i]) 
+        promedioTemp = suma / cantDias
+    print(f"la suma de las temperaturas es:{suma}, el promedi es: {promedioTemp}")
+    
+    
+    
+            
+
+    print(f"""Promedio de temperatura por mes: {promedioTemp}
+""")
+        
+temper()

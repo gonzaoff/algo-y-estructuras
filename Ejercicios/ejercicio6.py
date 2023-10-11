@@ -1,40 +1,5 @@
-import os
-os.system("cls")
-
-def promAlt():
-    cantEst=int(input("Cuantos estudiantes son: "))
-    estudiantes = [float() for i in range(cantEst)]
-
-    for altura in range(cantEst):
-        datos=float(input("Ingrese la altura de los estudiantes: "))
-        estudiantes[altura]=datos
-
-    for altura in range(cantEst):
-        sumaAltura=float()
-        sumaAltura += estudiantes[altura]
-        promedioAltura = sumaAltura / cantEst
-    print(f"El promedio de altura es: {promedioAltura}")
-    
-    
-    
-    
-def promAlt2():
-    cant_est = int(input("Cuántos estudiantes son: "))
-
-    alturas = [float() for i in range(cant_est)]
-    for i in range(cant_est):
-        altura = float(input(f"Ingrese la altura del estudiante {i+1}: "))
-        alturas[i] = altura
-
-    suma_alturas = 0.0 
-    for i in range(cant_est):
-        suma_alturas += alturas[i]
-
-    promedio_altura = suma_alturas / cant_est
-
-    print(f"El promedio de altura es: {promedio_altura}")
-
-# promAlt2()
+from os import system
+system("cls")
 
 def Notas():  # sourcery skip: convert-to-enumerate, move-assign-in-block
     
@@ -133,31 +98,78 @@ Mejor alumno: {mejorAlumno} con {notaMayor}
     
 # Notas()
 
-def productosEmpresas():
-    
-    tamaño=10
-    
-    vectorA=[int() for i in range(10)]
-    vectorB=[int() for i in range(10)]
-    vectorC=[int() for i in range(10)]
-    
-    for i in range(tamaño):
-        vectorA=int(input("Ingrese valor de las existencias: "))
-        vectorB=int(input("Ingrese valor de los pedidos: "))
-        
-    for i in range(tamaño):
-        if vectorA[i] == vectorB[i]:
-            vectorC[i] = vectorA[i]
-    
-        elif vectorB[i] > vectorA[i]:
-            diferencia = vectorB[i] - vectorA[i]
-            vectorC[i] = 2 * diferencia
-            
-        else:
-            vectorC[i] = vectorB[i]
-            
-    print("Vector C: ")
-    for valor in vectorC:
-        print(valor)
+def choferes():  # sourcery skip: convert-to-enumerate, move-assign-in-block, use-itertools-product
 
-productosEmpresas()
+    #indices:
+    iKM=0
+    iN=0
+    iCam=0
+    jDia=0
+    
+    #variables preinicializadas
+    suma=0
+    diasSemana=7
+    mayorKM=0
+    kmCh=0
+    
+    #ingreso la cantidad de choferes
+    cantChoferes=int(input("Ingrese la cantidad de choferes: "))
+    
+    #inicializo las arrays/matrices
+    nombres=[str() for i in range(cantChoferes)]
+    kilometros = [[0.0] * diasSemana for i in range(cantChoferes)]
+    sumaKM=[float() for i in range(cantChoferes)]
+
+    #solicito el nombre del chofer con la variable "nombre" y lo almaceno en la array "nombres" con el indice "iN"
+    for i in range(cantChoferes):
+        nombre=str(input("\nIngrese el nombre del chofer: "))
+        nombres[iN]=nombre
+        
+        # print(nombres)
+        
+        #solicito el kilometraje del chofer con la variable "kilometro" y lo almaceno en la array "kilometros" con los indices "[i][j]"
+        for j in range(diasSemana):
+            kilometro=float(input(f"\ningrese los km recorridos el dia {j+1}: "))
+            kilometros[i][j] = kilometro
+            
+            # si la variable "kilometro" es mayor a "mayorKM" entonces almaceno el valor de "kilometro" en "mayorKM",  
+            # el indice del nombre del chofer "i" en "iCam", guardo su valor en "mejorCh", y el dia "j+1" en "jDia"
+            if kilometro > mayorKM:
+                mayorKM = kilometro
+                iCam = i
+                jDia = j+1
+                mejorCh = nombres[iCam]
+        # print(kilometros)
+        
+        iN+=1
+        
+        #Sumo los valores de "i"(diasSemana) para cada "j"(cantChoferes) y lo almaceno en la array "sumaKM" con su indice
+        # de esta forma determino la suma de km para cada chofer ##Sin uso
+        for i in range(diasSemana):
+            for j in range(cantChoferes):
+                kmCh += kilometros[j][i]
+                sumaKM[iKM] = kmCh
+        # print(sumaKM)
+
+    #Sumo los kilometros totales y lo almaceno en "suma" para posteriormente hacer un promedio
+    for i in range(cantChoferes):
+        for j in range(diasSemana):
+            suma += kilometros[i][j]
+    promedioTotal=suma/cantChoferes
+    # print(suma,promedioTotal)
+    
+    # input: nombre, kilometro
+    # output: nombres, kilometros, totalRecorrido.
+    # mejorCh, mayorKm.
+    # promedioTotal
+    
+    print(f"""\n----------------------------------------------------------------------------------
+          
+Los choferes ingresados son {nombres} y recorrieron {suma} km entre los {cantChoferes}.
+haciendo entre los {cantChoferes}, {promedioTotal}km en promedio.
+el mejor chofer fue {mejorCh} habiendo hecho {mayorKM} el dia {jDia}.
+
+----------------------------------------------------------------------------------\n""")
+        
+choferes()
+    
