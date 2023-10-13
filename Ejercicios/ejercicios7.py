@@ -138,51 +138,99 @@ La persona con el mayor ingreso tiene: {mayorEdad} años.\nVive en el barrio: "{
 
 def notas2():  # sourcery skip: use-itertools-product
     
-    mayorNota=0
+    #Variables de mejores.
+    mejorNota=0
+    mejorProm=0
+    mejorMat=str()
     mejorAlu=str()
     
+    #Variables de menores.
+    menorNota=10
+    menorProm=10
+    menorMat=str()
+    menorAlu=str()
     
+    #Promedios y sumadores.
+    promedioAlu=0
+    sumaAlu=0
+    sumaMat=0
+    promedioMat=0
+    
+    #Solicito la cantidad de alumnos para establecer el tamaño de mi array "cantAlumnos"
     cantAlumnos=int(input("Ingrese la cantidad de alumnos: "))
 
-    
+    #Inicializo mi array
     alumnos=[str() for i in range(cantAlumnos)]
 
-
-
-    
+    # Solicito el nombre de los alumnos y las guardo en la array "alumnos"
     for i in range(cantAlumnos):
         alumno=str(input(f"\nIngrese el nombre del alumno {i+1}: "))
         alumnos[i]=alumno
     print(alumnos)
     
-    cantMaterias=int(input("""\nIngrese la "CANTIDAD" de materias: """))
-    materias=[str() for i in range(cantMaterias+1)]
-    materias[0]="Alumno/materia"
-        
+    #Solicito la cantidad de materias para establecer el tamaño de mi array "materias"
+    cantMaterias=int(input("Ingrese la cantidad de materias: "))
+    materias=[str() for i in range(cantMaterias)]  
+
+    # Solicito el nombre de las materias y las almaceno en la array "materias"
     for j in range(cantMaterias):
         materia=str(input(f"\nIngrese el nombre de la materia {j+1}: "))
-        materias[j+1]=materia
+        materias[j]=materia
     print(materias)
     
+    #Inicializo la matriz "notas"
     notas=[[0.0] * cantMaterias for i in range(cantAlumnos)]
     
+    #Solicito las notas y las guardo en la matriz "notas"
     for i in range(cantAlumnos):
         for j in range(cantMaterias):
             
-            nota=float(input(f"Ingrese las notas de {alumnos[i]} para {materias[j+1]} "))
+            nota=float(input(f"\nIngrese las notas de {alumnos[i]} para {materias[j]} "))
 
-            if nota > mayorNota:
-                mayorNota = nota
-                mejorAlu = alumnos[i]
-
+            #almaceno las notas en la matriz
             notas[i][j]=nota
             
-    print(mayorNota,mejorAlu)    
-    print(notas)
+        #Si la variable notas en mayor a la nota mayor, almacena los datos de "nota, alumnos[i] y materias[j]"
+            if nota > mejorNota:
+                mejorNota = nota
+                mejorAlu = alumnos[i]
+                mejorMat = materias[j]
             
-# output:
-# promedio por alumno -> promAlu
-# promedio por materia -> promedioMat
-# nombre y promedio mejor alumno -> mejorProm
-    
+            #Si la variable menorNotas en mayor a la nota, almacena los datos de "nota, alumnos[i] y materias[j]"
+            if nota < menorNota:
+                menorNota = nota
+                menorAlu = alumnos[i]
+                menorMat = materias[j]
+
+    print("------------------------------------------------------------------------------------------")
+    #Sumo y promedio las notas de los alumnos.
+    for i in range(cantAlumnos):
+        for j in range(cantMaterias):
+            sumaAlu+=notas[i][j]
+        promedioAlu=sumaAlu/cantMaterias
+        
+        #si menorPromedio es mayor a promedioAlu, menor promedio es igual a promedioAlu  
+        if promedioAlu < menorProm:
+            menorProm = promedioAlu
+        
+        #si promedioAlu es mayor a mejorProm, mejorProm es igual a promedioAlu
+        if promedioAlu > mejorProm:
+            mejorProm = promedioAlu
+            
+        print(f"Promedio {alumnos[i]}: {promedioAlu}\n")
+        #reinicio el sumador.
+        sumaAlu=0
+        
+    #Sumo y promedio las notas por materia.
+    for i in range(cantMaterias):
+        for j in range(cantAlumnos):     
+            sumaMat+=notas[j][i]
+        promedioMat=sumaMat/cantAlumnos
+        print(f"Promedio {materias[i]}: {promedioMat}\n")
+        sumaMat=0
+
+    #Muestro en pantalla los resultados
+    print(f"Nota Sobresaliente: {mejorAlu} {mejorNota} {mejorMat} Promedio: {mejorProm}\n")
+    if menorProm < 5:
+        print(f"\nRefuerzo: {menorAlu} {menorNota} {menorMat} Promedio: {menorProm}\n")
 notas2()
