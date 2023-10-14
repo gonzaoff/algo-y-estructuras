@@ -80,7 +80,7 @@ def ventasAH():
                     CanTotalVenLit = cantVenLit + 1 
                     regLit = float(input("Ingrese el monto de venta: ")) 
                     while regLit != 0:
-                          
+
                         totalVentLit=totalVentLit+regLit
                         regLit = float(input("Ingrese el monto de venta (precione 0 para ver los promedios): "))
 
@@ -92,7 +92,7 @@ def ventasAH():
                     CanTotalVenCen = cantVenCen + 1 
                     regCen = float(input("Ingrese el monto de venta: ")) 
                     while regCen != 0:
-                          
+
                         totalVentCen=totalVentCen+regCen
                         regCen = float(input("Ingrese el monto de venta (precione 0 para ver los promedios): "))
 
@@ -104,7 +104,7 @@ def ventasAH():
                     CanTotalVenBS = cantVenBS + 1 
                     regBS = float(input("Ingrese el monto de venta: ")) 
                     while regBS != 0:
-                          
+
                         totalVentBS=totalVentBS+regBS
                         regBS = float(input("Ingrese el monto de venta (precione 0 para ver los promedios): "))
 
@@ -116,7 +116,7 @@ def ventasAH():
                     CanTotalVenCABA = cantVenCABA + 1 
                     regCABA = float(input("Ingrese el monto de venta: ")) 
                     while regCABA != 0:
-                          
+
                         totalVentCABA=totalVentCABA+regCABA
                         regCABA = float(input("Ingrese el monto de venta (precione 0 para ver los promedios): "))
 
@@ -128,7 +128,7 @@ def ventasAH():
                     CanTotalVenNoreste = cantVenNoreste + 1 
                     regNoreste = float(input("Ingrese el monto de venta: ")) 
                     while regNoreste != 0:
-                          
+
                         totalVentNoreste=totalVentNoreste+regNoreste
                         regNoreste = float(input("Ingrese el monto de venta (precione 0 para ver los promedios): "))
 
@@ -140,7 +140,7 @@ def ventasAH():
                     CanTotalVenNorOes = cantVenNorOes + 1 
                     regNorOes = float(input("Ingrese el monto de venta: ")) 
                     while regNorOes != 0:
-                          
+
                         totalVentNorOes=totalVentNorOes+regNorOes
                         regNorOes = float(input("Ingrese el monto de venta (precione 0 para ver los promedios): "))
 

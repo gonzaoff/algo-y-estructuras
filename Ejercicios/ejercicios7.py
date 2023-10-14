@@ -111,11 +111,11 @@ def vivienda():  # sourcery skip: collection-into-set, merge-comparisons
         # Determino el ingreso mayor y guardo las variables que necesito mostrar.
         # (edad, barrio, ingreso, nivel educativo y origen de vivienda)
         if ingreso > mayorIngreso:
-           mayorEdad = edad
-           mayorBarrio = barrio
-           mayorIngreso = ingreso
-           mayorNivelEd = nivelEd
-           mayorOrgViv = orgViv
+            mayorEdad = edad
+            mayorBarrio = barrio
+            mayorIngreso = ingreso
+            mayorNivelEd = nivelEd
+            mayorOrgViv = orgViv
 
         edades[i] = edad
         barrios[i] = barrio
@@ -158,9 +158,15 @@ def notas2():  # sourcery skip: use-itertools-product
     
     #Solicito la cantidad de alumnos para establecer el tamaño de mi array "cantAlumnos"
     cantAlumnos=int(input("Ingrese la cantidad de alumnos: "))
+    
+    #Solicito la cantidad de materias para establecer el tamaño de mi array "materias"
+    cantMaterias=int(input("Ingrese la cantidad de materias: "))
 
     #Inicializo mi array
     alumnos=[str() for i in range(cantAlumnos)]
+    materias=[str() for i in range(cantMaterias)] 
+    #Inicializo la matriz "notas"
+    notas=[[0.0] * cantMaterias for i in range(cantAlumnos)]
 
     # Solicito el nombre de los alumnos y las guardo en la array "alumnos"
     for i in range(cantAlumnos):
@@ -168,18 +174,11 @@ def notas2():  # sourcery skip: use-itertools-product
         alumnos[i]=alumno
     print(alumnos)
     
-    #Solicito la cantidad de materias para establecer el tamaño de mi array "materias"
-    cantMaterias=int(input("Ingrese la cantidad de materias: "))
-    materias=[str() for i in range(cantMaterias)]  
-
     # Solicito el nombre de las materias y las almaceno en la array "materias"
     for j in range(cantMaterias):
         materia=str(input(f"\nIngrese el nombre de la materia {j+1}: "))
         materias[j]=materia
     print(materias)
-    
-    #Inicializo la matriz "notas"
-    notas=[[0.0] * cantMaterias for i in range(cantAlumnos)]
     
     #Solicito las notas y las guardo en la matriz "notas"
     for i in range(cantAlumnos):
