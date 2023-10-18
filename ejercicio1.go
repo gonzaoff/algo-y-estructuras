@@ -6,6 +6,88 @@ import (
 
 func main() {
 
+	// valorMayor()
+	// liquidacion()
+	// precioViajes()
+	// intercambio()
+	// cambioVal()
+	// areaYPerimetro()
+}
+
+func intercambio() {
+	fmt.Println("Ingresa un valor numerico: ")
+
+	var input int
+	fmt.Scan(&input)
+
+	result := input * 2
+
+	fmt.Println("el resultado es ", result)
+}
+
+func cambioVal() {
+	fmt.Println("Ingresa un valor Inicial: ")
+	var A int
+	fmt.Scan(&A)
+
+	B := 2
+
+	aux := 0
+
+	aux = A
+
+	A = B
+
+	B = aux
+
+	fmt.Println("A es", A, "B es", B, "aux es", aux)
+
+}
+
+func areaYPerimetro() {
+	//Area y perimetro de un circulo.
+	pi := 3.1416
+
+	fmt.Println("Ingresa el radio del circulo: ")
+
+	var radio float64
+	fmt.Scan(&radio)
+
+	fmt.Println("El area del circulo es: ", pi*radio*radio)
+
+	fmt.Println("El perimetro del circulo es: ", 2*pi*radio)
+}
+
+func precioViajes() {
+
+	//input: kmInicio, kmFinal, KMxL, precioCombustible
+	//output: precioViaje
+
+	fmt.Println("Ingrese el valor inicial del odometro. ")
+	var kmInicio int
+	fmt.Scan(&kmInicio)
+
+	fmt.Println("Ingrese el valor final del odometro. ")
+	var kmFinal int
+	fmt.Scan(&kmFinal)
+
+	const KMxL int = 11
+
+	fmt.Println("Ingrese el precio del combustible. ")
+	var precioCombustible float32
+	fmt.Scan(&precioCombustible)
+
+	var recorrido int = kmFinal - kmInicio
+	fmt.Println("Se recorrieron:", recorrido)
+
+	var nafta int = recorrido / KMxL
+	fmt.Println("Los litros de nafta consumidos son: ", nafta)
+
+	var precioViaje int = nafta * int(precioCombustible)
+	fmt.Println("el viaje sale: $", precioViaje)
+}
+
+func liquidacion() {
 	//Objetivo: obtener la liquidacion del sueldo.
 
 	//input:nombreApellido, DNI, sueldoBasico, antiguedad(0,012), falto(monto), conyuge(800), hijos, cantHijos(400)
@@ -94,81 +176,35 @@ func main() {
 	fmt.Println("\nel sueldo con descuentos es: $", int(suelBasDes))
 	fmt.Println("\nel sueldo bonificado es: $", int(sueldoBasico)+int(bonif)-int(suelBasDes))
 
-	// precioViajes()
-	// intercambio()
-	// cambioVal()
-	// areaYPerimetro()
 }
 
-func intercambio() {
-	fmt.Println("Ingresa un valor numerico: ")
+func valorMayor() {
 
-	var input int
-	fmt.Scan(&input)
+	//Idea de la consigna: Ingresar 3 valores numericos y determinar el mayor
+	//input: A,B,C
+	//output: NumMayor
 
-	result := input * 2
-
-	fmt.Println("el resultado es ", result)
-}
-
-func cambioVal() {
-	fmt.Println("Ingresa un valor Inicial: ")
-	var A int
+	fmt.Println("Ingrese el primer valor numerico.")
+	var A float32 = 0
 	fmt.Scan(&A)
 
-	B := 2
+	fmt.Println("Ingrese el segundo valor numerico.")
+	var B float32 = 0
+	fmt.Scan(&B)
 
-	aux := 0
+	fmt.Println("Ingrese el tercer valor numerico.")
+	var C float32 = 0
+	fmt.Scan(&C)
 
-	aux = A
+	var numMayor float32
 
-	A = B
+	if A > B && A > C {
+		numMayor = A
+	} else if B > A && B > C {
+		numMayor = B
+	} else {
+		numMayor = C
+	}
 
-	B = aux
-
-	fmt.Println("A es", A, "B es", B, "aux es", aux)
-
-}
-
-func areaYPerimetro() {
-	//Area y perimetro de un circulo.
-	pi := 3.1416
-
-	fmt.Println("Ingresa el radio del circulo: ")
-
-	var radio float64
-	fmt.Scan(&radio)
-
-	fmt.Println("El area del circulo es: ", pi*radio*radio)
-
-	fmt.Println("El perimetro del circulo es: ", 2*pi*radio)
-}
-
-func precioViajes() {
-
-	//input: kmInicio, kmFinal, KMxL, precioCombustible
-	//output: precioViaje
-
-	fmt.Println("Ingrese el valor inicial del odometro. ")
-	var kmInicio int
-	fmt.Scan(&kmInicio)
-
-	fmt.Println("Ingrese el valor final del odometro. ")
-	var kmFinal int
-	fmt.Scan(&kmFinal)
-
-	const KMxL int = 11
-
-	fmt.Println("Ingrese el precio del combustible. ")
-	var precioCombustible float32
-	fmt.Scan(&precioCombustible)
-
-	var recorrido int = kmFinal - kmInicio
-	fmt.Println("Se recorrieron:", recorrido)
-
-	var nafta int = recorrido / KMxL
-	fmt.Println("Los litros de nafta consumidos son: ", nafta)
-
-	var precioViaje int = nafta * int(precioCombustible)
-	fmt.Println("el viaje sale: $", precioViaje)
+	fmt.Println("El numero mayor es ", numMayor)
 }
