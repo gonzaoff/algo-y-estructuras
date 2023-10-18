@@ -89,10 +89,10 @@ func main() {
 	suelDesc := sueldoBasico * (apJub + obSoc + apGr)
 	suelBasDes := sueldoBasico - suelDesc
 
-	fmt.Println("La liquidacion de sueldo para", nombreApellido, "DNI: ", DNI)
-	fmt.Println("el sueldo neto es: $", int(sueldoBasico))
-	fmt.Println("el sueldo con descuentos es: $", int(suelBasDes))
-	fmt.Println("el sueldo bonificado es: $", int(bonif)-int(suelBasDes))
+	fmt.Println("\nLa liquidacion de sueldo para", nombreApellido, "DNI: ", DNI)
+	fmt.Println("\nel sueldo neto es: $", int(sueldoBasico))
+	fmt.Println("\nel sueldo con descuentos es: $", int(suelBasDes))
+	fmt.Println("\nel sueldo bonificado es: $", int(sueldoBasico)+int(bonif)-int(suelBasDes))
 
 	// precioViajes()
 	// intercambio()
