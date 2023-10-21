@@ -6,6 +6,7 @@ import (
 
 func main() {
 
+	// promedioAltura()
 	// valorMayor()
 	// liquidacion()
 	// precioViajes()
@@ -207,4 +208,26 @@ func valorMayor() {
 	}
 
 	fmt.Println("El numero mayor es ", numMayor)
+}
+
+func promedioAltura() {
+	fmt.Println("Ingrese la cantidad de estudiantes.")
+	var cantEstu int
+	fmt.Scan(&cantEstu)
+
+	var altura float32
+	var sumaAltura float32
+
+	for i := 0; i < cantEstu; i++ {
+		fmt.Println("Ingrese la altura del estudiante ", i+1)
+		fmt.Scan(&altura)
+
+		sumaAltura += altura
+	}
+
+	var promedioAltura float32
+	promedioAltura = sumaAltura / float32(cantEstu)
+
+	fmt.Println("El promedio de altura de los estudiantes es: ", promedioAltura)
+
 }

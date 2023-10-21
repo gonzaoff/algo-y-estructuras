@@ -65,13 +65,34 @@ el mejor chofer fue {mejorCh} habiendo hecho {mayorHR} el dia {jDia}.
 
 ----------------------------------------------------------------------------------\n""")
         
-choferes()
+# choferes()
     
-    
-        #output: horas trabajadas por semana por chofer, sueldo semanal del chofer,
-        # cuanto pagará la empresa en salario, trabajador que haya trabajo mas horas en la semana.
-    
-choferes()
 
 
 
+
+miLista = [1,3,5,2,7,8,9]
+
+def listaNumerosASumar(listas,objetivo):
+    #input: listaNumerosASumar, objetivoNumerico
+    
+    tamañoLista = len(listas)
+    valoresSumablesA = []
+    valoresSumablesB = []
+    cantidadDeNumerosMenorAlObjetivo=0
+    resultado=[[0] for i in range(tamañoLista)]
+                
+    for i in range(tamañoLista):
+        if listas[i] < objetivo:
+            resultado.append(listas[i])
+
+
+                
+
+            
+
+        
+    print(resultado)
+
+listaNumerosASumar(miLista,6)
+    
