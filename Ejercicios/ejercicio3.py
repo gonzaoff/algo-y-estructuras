@@ -65,5 +65,29 @@ def productosEmpresas():
     for valor in vectorC:
         print(valor)
 
-productosEmpresas()
+# productosEmpresas()
 
+def encontrar_combinacion(valores, objetivo):
+    combinaciones = []
+    encontrar_combinacion_recursiva(valores, objetivo, [], combinaciones)
+    return combinaciones
+
+def encontrar_combinacion_recursiva(valores, objetivo, combinacion_actual, combinaciones):
+    suma_actual = sum(combinacion_actual)
+    
+    if suma_actual == objetivo:
+        combinaciones.append(combinacion_actual[:])
+    elif suma_actual < objetivo:
+        for i in range(len(valores)):
+            nuevo_objetivo = objetivo - suma_actual
+            nuevo_valores = valores[i+1:]
+            nueva_combinacion = combinacion_actual + [valores[i]]
+            encontrar_combinacion_recursiva(nuevo_valores, nuevo_objetivo, nueva_combinacion, combinaciones)
+
+# Ejemplo de uso
+valores = [2, 4, 6, 8, 10]
+objetivo = 12
+
+combinaciones = encontrar_combinacion(valores, objetivo)
+for combinacion in combinaciones:
+    print(combinacion)

@@ -58,7 +58,7 @@ def choferes():  # sourcery skip: convert-to-enumerate, move-assign-in-block, us
     
 
     print(f"""\n----------------------------------------------------------------------------------
-          
+    
 Los choferes ingresados son {nombres} y recorrieron {suma} km entre los {cantChoferes}.
 haciendo entre los {cantChoferes}, {promedioTotal}km en promedio.
 el mejor chofer fue {mejorCh} habiendo hecho {mayorHR} el dia {jDia}.
@@ -69,30 +69,23 @@ el mejor chofer fue {mejorCh} habiendo hecho {mayorHR} el dia {jDia}.
     
 
 
-
-
-miLista = [1,3,5,2,7,8,9]
-
-def listaNumerosASumar(listas,objetivo):
-    #input: listaNumerosASumar, objetivoNumerico
     
-    tamañoLista = len(listas)
-    valoresSumablesA = []
-    valoresSumablesB = []
-    cantidadDeNumerosMenorAlObjetivo=0
-    resultado=[[0] for i in range(tamañoLista)]
-                
-    for i in range(tamañoLista):
-        if listas[i] < objetivo:
-            resultado.append(listas[i])
+def capicua(numero):  # sourcery skip: assign-if-exp
+    variable=str(numero)
 
+    comparador1=[]
+    comparador2=[]
 
-                
+    for i in variable:
+        comparador1 += i
 
-            
+    for i in variable[::-1]:
+        comparador2 += i
 
-        
-    print(resultado)
+    if comparador1 == comparador2:
+        return "Es capicua"
+    else:
+        return "No es capicua"
 
-listaNumerosASumar(miLista,6)
+print(capicua(123211))
     
