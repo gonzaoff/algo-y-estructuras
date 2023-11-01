@@ -30,3 +30,5 @@ def modifPrecio(ruta,codBuscado,precioNuevo):
             modifica.writelines(contenidoNuevo)
             modifica.close()
             return True
+        
+def modifPrecio():
