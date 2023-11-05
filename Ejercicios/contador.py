@@ -142,7 +142,7 @@ def modifPrecio(ruta,codBuscado,precioNuevo):
             with open(ruta, "w") as modifica:
                 modifica.write("".join(contenido))
         
-modifPrecio(ruta,180,203.4)
+#modifPrecio(ruta,180,203.4)
 
 def modfiStock(ruta,codBuscado,stockNuevo):
     with open(ruta) as archivo:
