@@ -1,3 +1,5 @@
+ruta="/home/gonza-pc/Escritorio/cursoprogram/algo-y-estructuras/Ejercicios/articulos.txt"
+
 def maxCod(ruta):
     with open(ruta) as archivo:
         contenido=archivo.readlines()
@@ -161,3 +163,19 @@ def modfiStock(ruta,codBuscado,stockNuevo):
             with open(ruta, "w") as modifica:
                 modifica.write("".join(contenido))
 #modfiStock(ruta,180,10)
+
+def delArt(ruta,codBuscado):
+    with open(ruta) as archivo:
+        contenido=archivo.readlines()
+
+    filas = len(contenido)
+
+    with open(ruta, "w") as modifica:
+        for i in range(filas):
+            cod = int(contenido[i].split(";")[0])
+            
+            if cod != codBuscado:
+                modifica.write(contenido[i])
+                
+                
+#delArt(ruta,180)
