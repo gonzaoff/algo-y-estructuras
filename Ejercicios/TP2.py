@@ -1,31 +1,7 @@
 
-ruta="/home/gonza-pc/Escritorio/CursoProgram/algo-y-estructuras/Ejercicios/articulos.txt"
+ruta="/home/gonza-pc/Escritorio/cursoprogram/algo-y-estructuras/Ejercicios/articulos.txt"
 
 
-def modifPrecio(ruta,codBuscado,precioNuevo):
-
-    with open(ruta) as archivo:
-        contenido=archivo.readlines()
-
-    contenidoNuevo = contenido
-
-    filas = len(contenido)
-
-    codBuscado = int()
-
-    for i in range(filas):
-        cod = int(contenido[i].split(";")[0])
-
-        if cod == codBuscado:
-            nombre = str(contenido[i].split(";")[1])
-            stock = int(contenido[i].split(";")[3])
-            lineaNueva = f"{cod};{nombre};{str(precioNuevo)};{stock}"
-            contenidoNuevo[i] = lineaNueva
-
-            with open(ruta, "w") as modifica:
-                modifica.writelines(contenidoNuevo)
-            return True
-    
 def maxCod(ruta):
     with open(ruta) as archivo:
         contenido=archivo.readlines()
@@ -148,5 +124,24 @@ def consumoArt(ruta,codigo,consumo):
             else:
                 print("No hay suficiente stock")
 
-consumoArt(ruta,180,132)
-    
+#consumoArt(ruta,180,132)
+
+def modifPrecio(ruta,codBuscado,precioNuevo):
+
+    with open(ruta) as archivo:
+        contenido=archivo.readlines()
+
+    filas = len(contenido)
+
+    for i in range(filas):
+        cod = int(contenido[i].split(";")[0])
+
+        if cod == codBuscado:
+            nombre = str(contenido[i].split(";")[1])
+            stock = int(contenido[i].split(";")[3])
+            contenido[i] = f"{cod};{nombre};{precioNuevo};{stock}"
+            
+            with open(ruta, "w") as modifica:
+                modifica.write("".join(contenido))
+        
+modifPrecio(ruta,180,203.4)
