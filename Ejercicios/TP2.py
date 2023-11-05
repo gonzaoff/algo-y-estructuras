@@ -145,7 +145,7 @@ def consumoArt(ruta,codigo,consumo):
             
             if consumo <= stock:
                 print(f"Hay {stock} existencias, se pueden consumir {consumo} unidades")
-            else:
+            else:ertertertertert
                 print("No hay suficiente stock")
 
 consumoArt(ruta,180,132)
