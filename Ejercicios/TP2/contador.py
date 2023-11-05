@@ -30,7 +30,7 @@ def valCod(ruta,valor):
             
 #valCod(ruta,140)
 
-def stocker(ruta,valor):
+def stocker(ruta,codBuscado):
     
     #INPUT: codigo del producto
     #OUTPUT: stock del producto
@@ -44,7 +44,7 @@ def stocker(ruta,valor):
     for i in range(filas):
         cod = int(contenido[i].split(";")[0])
 
-        if valor == cod:
+        if codBuscado == cod:
             return int(contenido[i].split(";")[3])
 
 #stocker(ruta,180)
@@ -117,7 +117,7 @@ def consumir(ruta,codBuscado,consumo):
             stock = int(contenido[i].split(";")[3])
             precio = float(contenido[i].split(";")[2])
             stockNuevo = stock - consumo
-            contenido[i] = f"{cod};{nombre};{precio};{stockNuevo}"
+            contenido[i] = f"{cod};{nombre};{precio};{stockNuevo}\n"
             
             with open(ruta, "w") as modifica:
                 modifica.write("".join(contenido))
@@ -178,4 +178,4 @@ def delArt(ruta,codBuscado):
                 modifica.write(contenido[i])
                 
                 
-#delArt(ruta,180)
+#delArt(ruta,179)
